@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "AORangeSlider",
     platforms: [
-        .iOS(.v8)
+        .iOS(.v13)
     ],
     products: [
         .library(
@@ -12,14 +12,20 @@ let package = Package(
             targets: ["AORangeSlider"]
         ),
     ],
-    dependencies: [
-        // Додайте залежності, якщо потрібно
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "AORangeSlider",
             dependencies: [],
             path: "AORangeSlider",
+            exclude: [
+                "Base.lproj",
+                "fr.lproj",
+                "AppDelegate.swift",
+                "Assets.xcassets",
+                "Info.plist",
+                "ViewController.swift"
+            ],
             sources: ["AORangeSlider.swift"]
         )
     ],
